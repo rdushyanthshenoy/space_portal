@@ -1,9 +1,11 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const mysqlConnection = require("./connection");
 
 const PersonRoutes = require("./routes/person");
 const FamilyRoutes = require("./routes/family");
+const PowerRoutes = require("./routes/power");
+const UnbalancedRoutes = require("./routes/unbalanced");
+const PowerBalanceRoutes = require("./routes/powerbalance");
 
 var app = express();
 
@@ -11,7 +13,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/person", PersonRoutes);
 app.use("/family",FamilyRoutes);
-
+app.use("/power",PowerRoutes);
+app.use("/unbalanced",UnbalancedRoutes);
+app.use("/powerbalance",PowerBalanceRoutes);
 
 
 app.listen(3000);
