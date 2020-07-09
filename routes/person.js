@@ -17,19 +17,21 @@ Router.get("/",(req, res)=>{
             }
             else{
                 res.send("Thanos destroyed everyone");
+                //Send error if there is no users in the database
             }
             console.log("query executed sucessfully");
         }
         else{
-            res.send("Cannot connect to Marvel Identity Management System")
-            console.log("Database connectivity error",err);
+            res.send("Cannot connect to Marvel Identity Management System");
+            console.log("Database connectivity error ",err);
         }
     })
 })
 
+//To insert new user universe
 Router.post("/",(req,res)=>{
     var PersonData=req.body;
-    console.log(req.body)
+    //Checking the payload if it has all the required parameters to create a user
     if(PersonData.id && PersonData.universe && PersonData.family_id && PersonData.power && PersonData.family){
         mysqlConnection.query("INSERT INTO Marvel.multiverse SET ?",PersonData,(err, rows, fields)=>{
             if(!err){
@@ -42,7 +44,7 @@ Router.post("/",(req,res)=>{
         })
     }
     else{
-        res.send("Please send all the person details")
+        res.send("Please send all details of the person")
         console.log("INSERT request rejected due to the missing of manditory params");
     }
 })
