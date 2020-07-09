@@ -1,3 +1,6 @@
+/*
+Listing families of a given universe
+*/
 const express = require("express");
 const Router = express.Router();
 const mysqlConnection = require("../connection");
@@ -8,7 +11,6 @@ var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-//To get all the availble user details from the multiverse
 Router.get("/",(req, res)=>{
     console.log(req.query.universe)
     mysqlQuery = "SELECT distinct family_id,family from multiverse where universe=?"
