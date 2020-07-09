@@ -17,4 +17,4 @@ app.use("/power",PowerRoutes);
 app.use("/unbalanced",UnbalancedRoutes);
 app.use("/powerbalance",PowerBalanceRoutes);
 
-app.listen(3000);
+app.listen(process.env.PORT || 5000);
