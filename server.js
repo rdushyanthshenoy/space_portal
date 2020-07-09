@@ -13,9 +13,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use("/person", PersonRoutes);
-app.use("/family",FamilyRoutes);
-app.use("/power",PowerRoutes);
-app.use("/unbalanced",UnbalancedRoutes);
-app.use("/powerbalance",PowerBalanceRoutes);
+app.use("/familyfromuniverse",FamilyRoutes);
+app.use("/arewebalanced",PowerRoutes);
+app.use("/unbalancedfamily",UnbalancedRoutes);
+app.use("/balanceme",PowerBalanceRoutes);
 
 app.listen(process.env.PORT || 5000);
