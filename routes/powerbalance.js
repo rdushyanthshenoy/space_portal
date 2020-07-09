@@ -18,8 +18,7 @@ Router.put("/",(req, res)=>{
             res.send(req.body.family+"'s power changed to "+req.body.power)
         }
         else{
-            res.send("Cannot connect to Marvel Identity Management System")
-            console.log("Database connectivity error",err);
+            res.send("Error in changing the power, please provide correct details")
         }
     })
 })
