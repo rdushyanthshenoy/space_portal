@@ -157,3 +157,4 @@ To start the application, install following npm dependences:
     nodemon(dev dependency)
 
 Import the Marvel_multiverse.sql file to setup the mysql database. This would import the sample user data.
+Configure the database using connections.js file with username and password of the database.
