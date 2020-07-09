@@ -1,4 +1,5 @@
-const express = require("express");
+/* Used in balancing the family by updating the same power accross all the families
+*/const express = require("express");
 const Router = express.Router();
 const mysqlConnection = require("../connection");
 const bodyParser = require("body-parser");
