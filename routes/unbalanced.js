@@ -1,3 +1,6 @@
+/*
+Used in gettng all the unbalanced families
+*/
 const express = require("express");
 const Router = express.Router();
 const mysqlConnection = require("../connection");
@@ -8,7 +11,6 @@ var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-//To get all the availble user details from the multiverse
 Router.get("/",(req, res)=>{
     mysqlQuery = "select family,family_id from multiverse group by power,family,family_id having count(family)>1"
     mysqlConnection.query(mysqlQuery,(err, rows, fields)=>{
