@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //To get all the availble user details from the multiverse
 Router.get("/",(req, res)=>{
     console.log(req.query.universe)
-    mysqlQuery = "SELECT * from multiverse where universe=?"
+    mysqlQuery = "SELECT distinct family_id,family from multiverse where universe=?"
     mysqlConnection.query(mysqlQuery,req.query.universe,(err, rows, fields)=>{
         if(!err){
             if(rows.length != 0){
