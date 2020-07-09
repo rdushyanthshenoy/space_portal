@@ -1,3 +1,6 @@
+/*
+Used to check if the family is balanced or unbalanced by compared the powers of same family
+*/
 const express = require("express");
 const Router = express.Router();
 const mysqlConnection = require("../connection");
@@ -8,7 +11,6 @@ var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-//To get all the availble user details from the multiverse
 Router.get("/",(req, res)=>{
     console.log(req.query.family)
     mysqlQuery = "SELECT count(power) as power FROM Marvel.multiverse where family =?"
