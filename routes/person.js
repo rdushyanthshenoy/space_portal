@@ -27,11 +27,10 @@ Router.get("/",(req, res)=>{
     })
 })
 
-//INSERT INTO `Marvel`.`multiverse` (`id`, `universe`, `family_id`, `power`, `name`) VALUES ('1', 'Planet X', '1', '1000', 'Groot');
 Router.post("/",(req,res)=>{
     var PersonData=req.body;
     console.log(req.body)
-    if(PersonData.id && PersonData.universe && PersonData.family_id && PersonData.power){
+    if(PersonData.id && PersonData.universe && PersonData.family_id && PersonData.power && PersonData.family){
         mysqlConnection.query("INSERT INTO Marvel.multiverse SET ?",PersonData,(err, rows, fields)=>{
             if(!err){
                 res.send("ID "+PersonData.id+" added to Marvel Identity Management System")
