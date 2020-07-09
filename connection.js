@@ -1,10 +1,11 @@
+/* This file is used to configure the database details*/
 const mysql = require("mysql");
 
 var mysqlConnection = mysql.createConnection({
-    host : "localhost",
-    user : "root",
-    password : "Ironman3000",
-    database : "Marvel",
+    host : "localhost", //Hostname of the DB
+    user : "root",  //Username of DB
+    password : "Ironman3000", //Password of the DB
+    database : "Marvel", // DB name
     multipleStatements : true
 })
 
