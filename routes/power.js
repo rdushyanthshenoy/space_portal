@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 Router.get("/",(req, res)=>{
     console.log(req.query.family)
-    mysqlQuery = "SELECT count(power) as power FROM Marvel.multiverse where family =?"
+    mysqlQuery = "SELECT count(dinstinct power) as power FROM Marvel.multiverse where family =?"
     mysqlConnection.query(mysqlQuery,req.query.family,(err, rows, fields)=>{
         if(!err){
             var powerCount = rows[0].power

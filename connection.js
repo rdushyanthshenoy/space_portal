@@ -4,7 +4,7 @@ const mysql = require("mysql");
 var mysqlConnection = mysql.createConnection({
     host : "localhost", //Hostname of the DB
     user : "root",  //Username of DB
-    password : "xxxxxxx", //Password of the DB
+    password : "Ironman3000", //Password of the DB
     database : "Marvel", // DB name
     multipleStatements : true
 })

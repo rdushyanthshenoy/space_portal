@@ -11,10 +11,11 @@ var app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
 app.use("/person", PersonRoutes);
 app.use("/family",FamilyRoutes);
 app.use("/power",PowerRoutes);
 app.use("/unbalanced",UnbalancedRoutes);
 app.use("/powerbalance",PowerBalanceRoutes);
 
-app.listen(3000);
+app.listen(process.env.PORT || 5000);
