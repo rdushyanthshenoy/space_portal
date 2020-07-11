@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 Router.get("/",(req, res)=>{
-    mysqlQuery = "select family,family_id from multiverse group by power,family,family_id having count(family)>1"
+    mysqlQuery = "select family from multiverse group by family having count(distinct power)>1"
     mysqlConnection.query(mysqlQuery,(err, rows, fields)=>{
         if(!err){
             res.send(rows)
